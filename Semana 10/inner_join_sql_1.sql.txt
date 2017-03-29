@@ -1,4 +1,4 @@
-CREATE TABLE clientes 
+﻿CREATE TABLE clientes 
   ( 
      codigo          SERIAL, 
      nombre          VARCHAR(30), 
@@ -34,7 +34,7 @@ INSERT INTO clientes
              codigoprovincia) 
 VALUES      ('Lopez Marcos', 
              'Colon 111', 
-             'C�rdoba', 
+             'Córdoba', 
              1); 
 
 INSERT INTO clientes 
@@ -97,6 +97,20 @@ VALUES      ('Torres Fabiola',
              'Ibera', 
              3); 
 
+SELECT *
+FROM   clientes;
+
+SELECT *
+FROM   provincias;
+
+
+--No aparece en el inner join
+UPDATE clientes SET codigoprovincia=04 
+WHERE nombre='Torres Fabiola';
+
+UPDATE clientes SET codigoprovincia=3 
+WHERE nombre='Torres Fabiola';
+
 SELECT c.nombre, 
        domicilio, 
        ciudad, 
@@ -116,7 +130,8 @@ ORDER  BY p.nombre;
 
 SELECT c.nombre, 
        domicilio, 
-       ciudad 
+       ciudad,
+       p.nombre 
 FROM   clientes AS c 
        JOIN provincias AS p 
          ON c.codigoprovincia = p.codigo 
