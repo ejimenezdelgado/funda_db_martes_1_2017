@@ -1,4 +1,4 @@
-CREATE TABLE mujeres 
+﻿CREATE TABLE mujeres 
   ( 
      nombre    VARCHAR(30), 
      domicilio VARCHAR(30), 
@@ -45,7 +45,15 @@ VALUES     ('Federico Pereyra',
 INSERT INTO varones 
 VALUES     ('Juan Garcia', 
             'Peru 333', 
-            50); 
+            50);
+
+SELECT * 
+FROM  mujeres;
+
+SELECT * 
+FROM  varones;
+
+--SELECT 4*3
 
 SELECT m.nombre, 
        m.edad, 
